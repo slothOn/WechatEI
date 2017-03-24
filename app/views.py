@@ -11,5 +11,6 @@ def index():
 @app.route('/', methods=['POST', ])
 def parsePost():
     content = request.data
-    xml2data.parseResp(content)
-    return ""
+    xmldict = xml2data.parseResp(content)
+    #$def with (toUser,fromUser,createTime,content)
+    return render_template("txt_resp_template.xml", toUser=xmldict['fromUser'], fromUser=xmldict['toUser'],content=xmldict['content'])

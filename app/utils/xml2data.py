@@ -7,4 +7,9 @@ def parseResp(txtdata):
     msgType = xml.find("MsgType").text
     fromUser = xml.find("FromUserName").text
     toUser = xml.find("ToUserName").text
-    print(content)
+    dictdata = {}
+    dictdata['content'] = content
+    dictdata['msgType'] = msgType
+    dictdata['fromUser'] = fromUser
+    dictdata['toUser'] = toUser
+    return dictdata
