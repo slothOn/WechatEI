@@ -1,8 +1,8 @@
 __author__ = 'zxc'
-from xml.etree.ElementTree import parse
+from xml.etree.ElementTree import parse, fromstring
 
 def parseResp(txtdata):
-    xml = parse(txtdata)
+    xml = fromstring(txtdata)
     content = xml.find("Content").text
     msgType = xml.find("MsgType").text
     fromUser = xml.find("FromUserName").text
